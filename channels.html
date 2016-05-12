@@ -1,0 +1,22 @@
+         <!--  <pre>{{ list|json  }}</pre>   -->
+         <div ng-repeat="(key,value) in list |groupBy: 'time|split:0'" class="">
+            <h2 class="row">{{key |myDate}}</h2>
+            <div ng-repeat="item in value" class="card">
+               <div class="row card-block">
+                  <div class="text-center">
+                     <!-- <div class="col-md-1">{{item.date}}<br></div> -->
+                     <div class="col-md-1"><img ng-src="{{item.subjectPhotoUrl}}" class="img-circle img-responsive"></div>
+                  </div>
+                  <div class="col-md-8 text-center">
+                     <h3>{{item.title}}</h3>
+                     <br>
+                     <p>{{item.description}}</p>
+                  </div>
+                  <div class="text-center">
+                     <div class="col-md-2"><img ng-src="{{item.instructorPhotoUrl}}" class="img-circle img-responsive"></div>
+                     <div class="col-md-2">{{item.instructorName}}</div>
+                     <div class="col-md-2">{{item.time |myTime}}</div>
+                  </div>
+               </div>
+            </div>
+         </div>
