@@ -1,10 +1,10 @@
 /// Code goes here
 (function(angular) {
 
-    angular.module('docsSimpleDirective', ['angular.filter'])
+    angular.module('channelsDirective', ['angular.filter'])
 
     .controller('Controller', ['$scope', '$http', '$filter', function($scope, $http, $filter) {
-            $scope.dataSet = $http.get('channels.json')
+            $http.get('channels.json')
                 .then(function(data) {
 
                     //load data from JSON file
@@ -44,6 +44,7 @@
 
             return {
                 //add template here
+                templateUrl: 'channels.html'
 
             };
         });
